@@ -9,6 +9,7 @@ import {
 } from '@/lib/neis';
 import { downloadPRDMarkdown } from '@/lib/downloadPrd';
 import { useTheme } from '@/hooks/use-theme';
+import { useUserAllergens } from '@/hooks/use-user-allergens';
 import { IPhoneFrame } from '@/components/IPhoneFrame';
 import { DateSegmentedControl, ViewMode } from '@/components/DateSegmentedControl';
 import { IOSCalendarStrip } from '@/components/iOSCalendarStrip';
@@ -37,17 +38,13 @@ export default function HomePage() {
   const [isFrameMode, setIsFrameMode] = useState<boolean>(true);
   const [selectedDate, setSelectedDate] = useState<Date>(() => new Date());
   const [viewMode, setViewMode] = useState<ViewMode>('day');
-  const [userAllergens, setUserAllergens] = useState<number[]>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('djhs_user_allergens');
-        return saved ? JSON.parse(saved) : [];
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    return [];
-  });
+
+  // Sync with localStorage without hydration mismatch or cascading renders
+  const {
+    allergens: userAllergens,
+    setAllergens: saveAllergens,
+    toggleAllergen: handleToggleAllergen,
+  } = useUserAllergens();
 
   // Modals
   const [isAllergyModalOpen, setIsAllergyModalOpen] = useState(false);
@@ -56,26 +53,6 @@ export default function HomePage() {
   const [allMonthMeals, setAllMonthMeals] = useState<MealData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
-  const saveAllergens = (allergens: number[]) => {
-    setUserAllergens(allergens);
-    try {
-      localStorage.setItem('djhs_user_allergens', JSON.stringify(allergens));
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  const handleToggleAllergen = (code: number) => {
-    const next = userAllergens.includes(code)
-      ? userAllergens.filter((c) => c !== code)
-      : [...userAllergens, code];
-    saveAllergens(next);
-  };
-
-  const handleSelectMultipleAllergens = (codes: number[]) => {
-    saveAllergens(codes);
-  };
 
   const currentYear = selectedDate.getFullYear();
   const currentMonth = selectedDate.getMonth() + 1;
@@ -339,7 +316,7 @@ export default function HomePage() {
           )}
         </main>
 
-        {/* Custom Apple iOS Date Picker Modal (With Meal status indicators) */}
+        {/* Custom Apple iOS Date Picker Modal */}
         <IOSDatePickerModal
           isOpen={isDatePickerOpen}
           onClose={() => setIsDatePickerOpen(false)}
@@ -354,7 +331,7 @@ export default function HomePage() {
           onClose={() => setIsAllergyModalOpen(false)}
           selectedAllergens={userAllergens}
           onToggleAllergen={handleToggleAllergen}
-          onSelectMultiple={handleSelectMultipleAllergens}
+          onSelectMultiple={saveAllergens}
         />
       </IPhoneFrame>
 

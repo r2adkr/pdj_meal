@@ -181,7 +181,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                   사용자 페르소나 및 핵심 문제 해결
                 </h3>
                 <div className="space-y-2.5">
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 text-xs space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 text-xs space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       1. 재학생 (박민준, 2학년 스마트전자과)
                     </span>
@@ -191,7 +191,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       ➔ <strong>해결:</strong> 모바일 최적화 일별 뷰, 3초 이내 메뉴 복사 및 개인별 알레르기 자동 감지 경고 시스템 제공.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 text-xs space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 text-xs space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       2. 학부모 (김수연 님, 학부모회)
                     </span>
@@ -254,7 +254,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                   Apple iOS HIG (Human Interface Guidelines) 구현 원칙
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       1. Inset Grouped Table View
                     </span>
@@ -262,7 +262,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       24px 스쿼클(Squircle) 라운딩, 미세한 헤어라인 보더(border-black/5), 카드형 섹션 분리.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       2. Glassmorphic Frosted Bar
                     </span>
@@ -270,7 +270,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       backdrop-blur-xl 반투명 상단 네비게이션 바 및 라지 타이틀(Large Title) 타이포그래피.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       3. iOS Segmented Control
                     </span>
@@ -278,7 +278,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       부드러운 슬라이딩 필(Pill) 애니메이션으로 구성된 일별/주간/월간 모드 전환기.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       4. Apple Color System
                     </span>
@@ -333,7 +333,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                   비기능 요구사항 & 아키텍처
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       1. 인메모리 캐싱 (TTL 10분)
                     </span>
@@ -341,7 +341,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       반복 요청 시 NEIS API 호출을 줄이고 50ms 이내 초고속 응답 보장.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       2. 주말/방학 예외 처리
                     </span>
@@ -349,7 +349,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       INFO-200(데이터 없음) 수신 시 친절한 휴일 안내 화면 렌더링.
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       3. 반응형 뷰포트 지원
                     </span>
@@ -357,7 +357,7 @@ export function PRDModal({ isOpen, onClose }: PRDModalProps) {
                       iPhone 14/15/16 및 iPad, 데스크톱 브라우저 완벽 대응 (360px ~ 1440px).
                     </p>
                   </div>
-                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-750 space-y-1">
+                  <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 space-y-1">
                     <span className="font-bold text-zinc-800 dark:text-zinc-200">
                       4. Web App Manifest & 메타태그
                     </span>
