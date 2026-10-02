@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --ios-bg: #f2f2f7;
+    --ios-card: #ffffff;
+    --ios-secondary: #e5e5ea;
+    --ios-separator: rgba(60, 60, 67, 0.12);
+  }
+
+  .dark {
+    --ios-bg: #000000;
+    --ios-card: #1c1c1e;
+    --ios-secondary: #2c2c2e;
+    --ios-separator: rgba(235, 235, 245, 0.14);
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, "SF Pro Text", "SF Pro Display", Roboto, "Helvetica Neue", sans-serif;
+  }
+}
+
+/* Hide scrollbar for iOS clean horizontal strip */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

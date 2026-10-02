@@ -1,0 +1,6 @@
+{
+  "name": "대진전자통신고등학교 급식 알리미",
+  "description": "나이스(NEIS) 교육정보 개방포털 실시간 연동 대진전자통신고등학교 일별/주간/월간 급식 식단, 영양성분 및 알레르기 안심 조회 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
